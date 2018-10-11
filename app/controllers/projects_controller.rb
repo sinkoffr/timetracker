@@ -1,16 +1,14 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_user!, only: [:create]
+  
   def index
     @projects = Project.all
     @project = Project.new
   end
   
   def create
-    Project.create(project_params)
+    current_user.projects.create(project_params)
     redirect_to root_path
-  end
-  
-  def new
-      
   end
   
   private
