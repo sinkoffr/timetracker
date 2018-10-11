@@ -9,6 +9,40 @@
   color: white;
 }
 
-.body {
-  padding-top: 150px;
+// .body {
+//   padding-top: 150px;
+// }
+
+.project {
+  margin: 25px;
+}
+
+.btn-default {
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.btn {
+  white-space: unset;
+}
+
+hr {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  border-width: 5px;
+  border-color: #afd6f9;
+}
+
+#new-project {
+  background-color: #afd6f9;
+  width: 12.5%;
+  float: right;
+  margin-left: auto;
+  margin-right: 50px;
+}
+
+#new-project-submit {
+  background-color: #afd6f9;
+  float: right;
 }

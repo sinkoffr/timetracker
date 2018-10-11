@@ -10,8 +10,12 @@
 
   <body>
     <nav class="navbar fixed-top navbar-inverse bg-inverse">
-      <h2 class="center light-text">TimeTracker 2018</a>
+      <h2 class="center light-text">TimeTracker 2018</h2>
+      <button type="button" class="btn btn-default" id="new-project" data-toggle="modal" data-target="#NewProjectModal">New Project</button>
     </nav>
+    
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     
     <%= yield %>
   </body>

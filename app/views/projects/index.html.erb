@@ -1,8 +1,45 @@
+<br />
+<br />
+<br />
+<br />
+
 <div class="body">
-  <% @projects.each do |project| %>
-    <div>
-      <h1><%= project.name %></h1>
-      <h3><%= project.description %></h3>
+ 
+  
+  <!-- Modal -->
+  <div class="modal fade" id="NewProjectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="NewProjectModalLabel">Add a New Project</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <%= simple_form_for @project do |f| %>
+          <div class="modal-body">
+            <%= f.input :name %>
+            <%= f.input :description %>
+            <%= f.submit 'Create', class: 'btn btn-default', id: 'new-project-submit' %>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        <% end %>
+      </div>
     </div>
+  </div>
+  <br />
+  <br />
+  <% @projects.each do |project| %>
+    <div class="row project">
+      <h1 class="col-3"><%= project.name %></h1>
+      <h3 class="col-3"><%= project.description %></h3>
+      <div class="btn-group-lg">
+        <button type="button" class="btn btn-default">Add Record</button>
+        <button type="button" class="btn btn-default">Summary</button>
+        <button type="button" class="btn btn-default">Edit Project</button>
+      </div>
+    </div>
+    <hr>
   <% end %>
 </div>
+ 
