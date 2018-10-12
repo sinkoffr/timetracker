@@ -10,9 +10,9 @@
   color: white;
 }
 
-// .body {
-//   padding-top: 150px;
-// }
+body {
+  margin-top: 150px;
+}
 
 .project {
   margin: 25px;
@@ -65,4 +65,11 @@ a {
 
 button a {
   color: black;
+}
+
+.left {
+  display: flex;
+    margin-left: auto;
+    margin-right: 150px;
+    margin-top: 50px;
 }

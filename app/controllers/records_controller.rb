@@ -9,7 +9,7 @@ class RecordsController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @records = @project.records.create(record_params)
-    redirect_to root_path
+    redirect_to project_path(@project)
   end
 
 

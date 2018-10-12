@@ -1,10 +1,12 @@
-<br />
-<br />
-<br />
-<br />
-<div class="center">
-  <h1><%= @project.name %></h1>
-  <h3><%= @project.description %></h3>
-  <hr>
-  <h2><%= @summary %> total hours worked</h2>
-</div>
+<% if user_signed_in? %>
+  <div class="center">
+    <h1><%= @project.name %></h1>
+    <h3><%= @project.description %></h3>
+    <hr>
+    <h2><%= @summary %> total hours worked</h2>
+  </div>
+<% else %>
+  <h1 class="center">Please <%= link_to 'Sign In', new_user_session_path %> to see projects</h1>
+<% end %>
+
+<button class="left btn btn-default"><%= link_to 'Projects', root_path %></button>

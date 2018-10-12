@@ -16,6 +16,16 @@ class ProjectsController < ApplicationController
     @summary = Record.sum(:duration_of_work)
   end
   
+  def edit
+    @project = Project.find(params[:id])
+  end
+  
+  def update
+    @project = Project.find(params[:id])
+    @project.update_attributes(project_params)
+    redirect_to root_path
+  end
+  
   private
   
   def project_params
