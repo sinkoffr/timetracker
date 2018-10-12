@@ -35,8 +35,9 @@
       <h1 class="col-3"><%= project.name %></h1>
       <h3 class="col-3"><%= project.description %></h3>
       <div class="btn-group-lg">
-        <button type="button" class="btn btn-default">Add Record</button>
-        <button type="button" class="btn btn-default">Summary</button>
+        <button type="button" class="btn btn-default"><%= link_to 'Add Record', new_project_record_path(project) %>
+        </button>
+        <button type="button" class="btn btn-default summary"><%= link_to 'Summary', project_path(project) %></button>
         <button type="button" class="btn btn-default">Edit Project</button>
       </div>
     </div>

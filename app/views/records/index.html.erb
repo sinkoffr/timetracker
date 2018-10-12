@@ -5,3 +5,7 @@
 
 <h1 class="center">Records</h1>
 <hr />
+
+<% @record.each do |record| %>
+  <h1 class="col-3"><%= record.inspect %></h1>
+<% end %>

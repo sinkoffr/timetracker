@@ -11,9 +11,14 @@ class ProjectsController < ApplicationController
     redirect_to root_path
   end
   
+  def show
+    @project = Project.find(params[:id])
+    @summary = Record.sum(:duration_of_work)
+  end
+  
   private
   
   def project_params
-    params.require(:project).permit(:name, :description) 
+    params.require(:project).permit(:name, :description, :project_id) 
   end
 end

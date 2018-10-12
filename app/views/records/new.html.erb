@@ -1,0 +1,13 @@
+<br />
+<br />
+<br />
+<br />
+
+<div class="authentication-form">
+  <h2><%= @project.name %></h2>
+  <%= simple_form_for @record, url: project_records_path(@project) do |f| %>
+    <%= f.input :duration_of_work %>
+    <%= f.input :record_date %>
+    <%= f.submit "Add Record" %>
+  <% end %>
+</div>
