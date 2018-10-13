@@ -54,10 +54,6 @@ hr {
   margin-right: auto;
 }
 
-a {
-  color: #afd6f9;
-}
-
 .navlink {
   justify-content: center;
   display: flex;
@@ -67,9 +63,17 @@ button a {
   color: black;
 }
 
-.left {
+.right {
   display: flex;
-    margin-left: auto;
-    margin-right: 150px;
-    margin-top: 50px;
+  margin-left: auto;
+  margin-right: 150px;
+  margin-top: 50px;
+}
+
+a, h5 {
+  margin-left: auto;
+}
+
+.dark-font {
+  color: black;
 }

@@ -1,5 +1,14 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'rspec/rails'
+# note: require 'devise' after require 'rspec/rails'
+require 'devise'
+
+RSpec.configure do |config|
+  config.include Devise::Test::IntegrationHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+end
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production

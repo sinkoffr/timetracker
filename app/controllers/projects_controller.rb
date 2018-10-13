@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!
   
   def index
     @projects = Project.all
@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
   
   def show
     @project = Project.find(params[:id])
-    @summary = Record.sum(:duration_of_work)
+    @summary = Record.where(:project_id => @project).sum(:duration_of_work)
   end
   
   def edit

@@ -1,8 +1,4 @@
-<% if user_signed_in? %>
-  <button type="button" class="btn btn-default" id="new-project" data-toggle="modal" data-target="#NewProjectModal">New Project</button>
-<% else %>
-  <h1 class="center">Please <%= link_to 'Sign In', new_user_session_path %> to see projects</h1>
-<% end %>
+<button type="button" class="btn btn-default" id="new-project" data-toggle="modal" data-target="#NewProjectModal">New Project</button>
 
 <div class="body">
  
@@ -30,24 +26,19 @@
   
   <br />
   <br />
-  <% if user_signed_in? %>
-    <% @projects.each do |project| %>
-      <div class="row project">
-        <h1 class="col-3"><%= project.name %></h1>
-        <h3 class="col-3"><%= project.description %></h3>
-        <div class="btn-group-lg">
-          <button type="button" class="btn btn-default"><%= link_to 'Add Record', new_project_record_path(project) %>
-          </button>
-          <button type="button" class="btn btn-default summary"><%= link_to 'Summary', project_path(project) %></button>
-          
-          <button type="button" class="btn btn-default"><%= link_to 'Edit Project', edit_project_path(project) %></button>
-        </div>
+  <% @projects.each do |project| %>
+    <div class="row project">
+      <h1 class="col-3"><%= project.name %></h1>
+      <h3 class="col-3"><%= project.description %></h3>
+      <div class="btn-group-lg">
+        <button type="button" class="btn btn-default"><%= link_to 'Add Record', new_project_record_path(project) %>
+        </button>
+        <button type="button" class="btn btn-default summary"><%= link_to 'Summary', project_path(project) %></button>
+        <button type="button" class="btn btn-default"><%= link_to 'Edit Project', edit_project_path(project) %></button>
       </div>
-      <hr>
-    <% end %>
+    </div>
+    <hr>
   <% end %>
-  
-
   
 </div>
  

@@ -1,7 +1,9 @@
- <%= simple_form_for @project do |f| %>
-  <div class="modal-body">
+<%= simple_form_for @project do |f| %>
+  <div class="authentication-form">
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.submit 'Update', class: 'btn btn-default', id: 'edit-project-submit' %>
   </div>
 <% end %>
+
+<h5 class="right dark-font"><%= link_to 'Return to Projects', root_path %></h5>
