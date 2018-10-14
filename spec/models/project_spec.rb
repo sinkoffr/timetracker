@@ -1,5 +1,6 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe Project, type: :model do
-
-end
+# RSpec.describe Project, type: :model do
+#   it { should belong_to(:user) }
+#   it { should have_many(:records) }
+# end

@@ -12,8 +12,12 @@ class ProjectsController < ApplicationController
   end
   
   def show
-    @project = Project.find(params[:id])
-    @summary = Record.where(:project_id => @project).sum(:duration_of_work)
+    @project = Project.find_by(id: params[:id])
+    if !@project.present?
+      redirect_to root_path
+    else
+      @summary = Record.where(:project_id => @project).sum(:duration_of_work)
+    end
   end
   
   def edit
